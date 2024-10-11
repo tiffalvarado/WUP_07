@@ -29,7 +29,7 @@ state of a patient must be died or alive - we adjust that as well
 
 #Methods 
 
-Since is catagorical we use cat and cat
+Since is sex is catagorical and result is catagorical we use the cat_cat helper file.   
 
 $H_0$ dying is not independent of sex.  
 
@@ -57,8 +57,14 @@ among the people who died there were 64% of the men who died and 36% of women wh
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-
+The p-value from the chi spread test was 0.01 so we reject the null hypothesis. we conclude that dying is dependent of sex. therefor we are 2.3 times more likely to die from covid in males than females in korea.  
 
 ## Conclusions
 
+In conclusion we reject the null hypothesis that dying is not independent of sex. 64% of males died versus the 36% of women who died. In the fisher test results it shows that we are 2.3 times more likely to die from covid in males than females.
