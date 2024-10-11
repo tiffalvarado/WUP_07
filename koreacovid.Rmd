@@ -1,7 +1,7 @@
 ---
 title: "Initial Korean covid 19"
-author: "your name here"
-date: "todays date"
+author: "Tiffany Alvarado"
+date: "FAll 2024"
 output:
   html_document: default
   pdf_document: default
@@ -27,24 +27,33 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
+#Methods 
 
+Since is catagorical we use cat and cat
 
+$H_0$ dying is not independent of sex.  
 
-
+$H_A$ Dying is independent of sex.  
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
-
+```
+This shows there are more dead men than there are alive.
   
 
-
-
-
-
-  
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+among the people who died there were 64% of the men who died and 36% of women who died.  
 
 ## Inferential results 
 
